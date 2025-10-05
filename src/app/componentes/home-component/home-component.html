@@ -1,16 +1,78 @@
 <head>
-    
+
 </head>
 
 <body>
 
-    <form  [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+    <form (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+        <div>
+
+            <select class="form-select" name="empresa" required [(ngModel)]="empresa"
+                [ngClass]="{ 'is-invalid': formSubmitted && !empresa }">
+                <option value="" disabled selected>Selecione a empresa</option>
+                <!-- <option value="MT">MT</option> -->
+                
+            </select>
+            <div class="invalid-feedback" *ngIf="formSubmitted && !uf">
+                Selecione uma Empresa
+            </div>
+
+            <div class="espacoInferior"></div>
+
+            <select class="form-select" name="uf" required [(ngModel)]="uf"
+                [ngClass]="{ 'is-invalid': formSubmitted && !uf }">
+                <option value="" disabled selected>Selecione a UF de saída</option>
+                <option value="MT">MT</option>
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="formSubmitted && !uf">
+                Selecione uma UF
+            </div>
+
+            <div class="espacoInferior"></div>
+
+            <select class="form-select mt-2" name="produto" required [(ngModel)]="produto"
+                [ngClass]="{ 'is-invalid': formSubmitted && !produto }">
+                <option value="" disabled selected>Selecione o produto</option>
+                <option value="etanol">Etanol</option>
+                <option value="gasolina">Gasolina</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="formSubmitted && !produto">
+                Selecione um produto da lista
+            </div>
+        </div>
+
+        
+
+        <div>
+            <button class="btn btn-primary mt-3" type="submit">Consultar</button>
+        </div>
+
+        <div class="espacoInferior"></div>
+
+        <div class="alert alert-light mt-3" role="alert" id="rodape">
+            Caso o produto ou UF não conste aqui, consultar o setor de planejamento tributário
+        </div>
+    </form>
+
+
+
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
 
         <div>
 
+            <select class="form-select" formControlName="empresa" required>
+                <option selected disabled value="">Selecione a Empresa</option>
+                
+            </select>
+            <div class="invalid-feedback" *ngIf="form.get('empresa')?.touched && form.get('empresa')?.invalid">
+                Selecione uma Empresa
+            </div>
+
             <select class="form-select" formControlName="uf" required>
                 <option selected disabled value="">Selecione a UF de saída</option>
-                <!-- <option value="1">One</option> -->
+                
             </select>
             <div class="invalid-feedback" *ngIf="form.get('uf')?.touched && form.get('uf')?.invalid">
                 Selecione uma UF
@@ -18,7 +80,7 @@
 
             <select class="form-select" formControlName="produto" required>
                 <option selected disabled value="">Selecione o produto</option>
-                <!-- <option value="1">One</option> -->
+                
             </select>
         </div>
         <div class="invalid-feedback" *ngIf="form.get('produto')?.touched && form.get('produto')?.invalid">
@@ -33,8 +95,8 @@
             Caso o produto ou UF não conste aqui, consultar o setor de planejamento tributário
         </div>
 
-        <p id="rodape"></p>
+        <p id="rodape"></p> 
 
-    </form>
+    </form>-->
 
 </body>
