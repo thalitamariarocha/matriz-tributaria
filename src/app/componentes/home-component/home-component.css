@@ -1,0 +1,19 @@
+body{
+    margin: 150px 30% 100px 30%;
+    /* margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px; */
+}
+
+.form-select{
+    margin-bottom: 50px;
+}
+
+#rodape{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.btn-primary{
+    width: 100%;
+}

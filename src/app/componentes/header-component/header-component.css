@@ -1,0 +1,33 @@
+.cabecalho {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 10px 5px 5px gray;
+    display: flex;
+    align-items: center;       /* Centraliza verticalmente */
+    justify-content: space-between; /* Distribui os elementos */
+    padding: 0 20px;           /* Espaçamento lateral */
+
+}
+
+#logo {
+    /*margin: 30px;
+     width: 200px; */
+    height: 20px;
+}
+
+.titulo {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
