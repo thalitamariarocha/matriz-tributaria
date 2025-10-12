@@ -1,0 +1,65 @@
+<body>
+
+    <h2>Novo Produto</h2>
+
+    <div class="espacoInferior"></div>
+
+    <form (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+
+        <input class="form-control" type="text" placeholder="Descrição do Produto" aria-label="Produto">
+
+
+        <input class="form-control" type="text" placeholder="Empresa" aria-label="Empresa">
+
+        <select class="form-select" name="uf" required [(ngModel)]="uf">
+            <option value="" disabled>UF</option>
+            <option *ngFor="let estado of ufs" [value]="estado">
+                {{ estado }}
+            </option>
+        </select>
+
+        <input class="form-control" type="text" placeholder="NCM 'com pontos'" aria-label="NCM">
+
+
+
+
+
+        <div class="areaTributo">
+
+            <h6>Tributações</h6>
+
+            <div class="espacoInferior"></div>
+
+            <input class="form-control" type="text" placeholder="Imposto (sigla)" aria-label="Imposto">
+
+            <div class="espacoInferior10"></div>
+
+            <div class="form-floating">
+                <textarea class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
+                <label for="floatingTextarea">"Descreva o imposto, aliquota e comentários"</label>
+            </div>
+
+            <div class="espacoInferior10"></div>
+
+            <div class="d-grid gap-2 col-6 mx-auto" >
+                <button type="button" class="btn btn-outline-danger" >Novo Imposto</button>
+            </div>
+
+            
+
+        </div>
+
+
+
+
+        <div>
+            <button class="btn btn-primary mt-3" type="submit">Cadastrar</button>
+        </div>
+
+        <div class="espacoInferior"></div>
+
+
+    </form>
+
+
+</body>

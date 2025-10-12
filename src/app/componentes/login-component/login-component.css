@@ -1,0 +1,16 @@
+body{
+    margin: 150px 30% 100px 30%;
+}
+
+.espacoInferior{
+    margin-bottom: 50px;
+}
+
+#rodape{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.btn-primary{
+    width: 100%;
+}

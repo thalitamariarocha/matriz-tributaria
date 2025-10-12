@@ -11,12 +11,6 @@ import { RouterModule } from '@angular/router';
 
 })
 export class HeaderComponent {
-
-  // constructor(private router: Router) {}
-
-  // rotaLogin() {
-  //   this.router.navigate(['/login']);
-  // }
   
 
 
