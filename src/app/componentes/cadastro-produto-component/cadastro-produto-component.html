@@ -1,5 +1,17 @@
 <body>
 
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left"
+            viewBox="0 0 16 16" (click)="voltar()">
+            <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+
+        </svg>
+        Voltar
+    </div>
+
+    <div class="espacoInferior"></div>
+
     <h2>Novo Produto</h2>
 
     <div class="espacoInferior"></div>
@@ -28,7 +40,7 @@
 
             <h6>Tributações</h6>
 
-            <div class="espacoInferior"></div>
+            <!-- <div class="espacoInferior"></div>
 
             <input class="form-control" type="text" placeholder="Imposto (sigla)" aria-label="Imposto">
 
@@ -39,13 +51,32 @@
                 <label for="floatingTextarea">"Descreva o imposto, aliquota e comentários"</label>
             </div>
 
-            <div class="espacoInferior10"></div>
+            <div class="espacoInferior10"></div> -->
 
-            <div class="d-grid gap-2 col-6 mx-auto" >
-                <button type="button" class="btn btn-outline-danger" >Novo Imposto</button>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" (click)="adicionarImposto()" class="btn btn-outline-success">Novo Imposto</button>
+                <button type="button" class="btn btn-outline-danger" (click)="removerUltimoImposto()"
+                    [disabled]="impostos.length === 0">Remover último Imposto</button>
+
+
             </div>
 
-            
+            <div *ngFor="let imposto of impostos; let i = index" class="mt-3">
+                <input class="form-control" type="text" [(ngModel)]="imposto.nome" placeholder="Imposto (sigla)"
+                    aria-label="Imposto">
+
+                <div class="espacoInferior10"></div>
+
+                <div class="form-floating">
+                    <textarea class="form-control" [(ngModel)]="imposto.descricao" id="floatingTextarea{{i}}"
+                        style="height: 150px;"></textarea>
+                    <label [for]="'floatingTextarea' + i">Descreva o imposto, alíquota e comentários</label>
+                </div>
+
+                <div class="espacoInferior10"></div>
+            </div>
+
+
 
         </div>
 

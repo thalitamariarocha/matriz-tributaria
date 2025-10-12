@@ -19,7 +19,27 @@ export class CadastroProdutoComponent {
     'RR', 'SC', 'SP', 'SE', 'TO'
   ];
 
+
+  impostos: { nome: string; descricao: string }[] = [];
+
+  adicionarImposto() {
+    this.impostos.push({ nome: '', descricao: '' });
+  }
+
+  removerUltimoImposto() {
+    if (this.impostos.length > 0) {
+      this.impostos.pop();
+    }
+  }
+
+  voltar(){
+    //TODO fazer a configuração para voltar na tela anterior
+  }
+
   onSubmit() {
+
+    //TODO fazer o cadastro dos produtos p/ banco
+    
     // this.formSubmitted = true;
 
     // if (!this.uf || !this.produto) return;
